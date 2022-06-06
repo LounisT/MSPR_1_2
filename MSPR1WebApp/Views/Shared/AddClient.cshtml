@@ -1,0 +1,72 @@
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Ajouter un Client";
+}
+
+
+
+<form method="post">
+    <div class="log_input">
+            <label for="RefClient">RefClient </label>
+            <input type="text" name="RefClient" placeholder="23">
+    </div>
+    <div class="log_input">
+            <label for="codeClient">Code Client </label>
+            <input type="text" name="codeClient" placeholder="Augereau">
+    </div> 
+    <div class="log_input">
+            <label for="Nom">Nom </label>
+            <input type="text" name="Nom" placeholder="Augereau">
+    </div>
+
+    <div class="log_input">
+        <label for="Adresse1">Adresse 1 </label>
+        <input type="text" name="Adresse1" placeholder="2, rue de Rivoli">
+    </div>
+
+    <div class="log_input">
+        <label for="Adresse2">Adresse 2 </label>
+        <input type="text" name="Adresse2" placeholder="">
+    </div>
+
+    <div class="log_input">
+        <label for="Ville">Ville </label>
+        <input type="text" name="Ville" placeholder="Paris">
+    </div>
+
+    <div class="log_input">
+        <label for="CP">Code Postal </label>
+        <input type="text" name="CP" placeholder="75004">
+    </div>
+
+    <div class="log_input">
+        <label for="Pays">Pays </label>
+        <input type="text" name="Pays" placeholder="France">
+    </div>
+
+        <div class="log_input">
+        <label for="Tel">Tel </label>
+        <input type="text" name="Tel" placeholder="0987654321">
+    </div>
+
+    <div class="log_input">
+        <label for="Web">Web </label>
+        <input type="text" name="Web" placeholder="www.augereau.fr">
+    </div>
+    <div class="log_input">
+        <label for="Email">Email </label>
+        <input type="text" name="Email" placeholder="www.augereau.fr">
+    </div>
+
+
+    <div class="log_input">
+        <label for="CompteComptable">Compte Comptable </label>
+        <input type="text" name="CompteComptable" placeholder="411AUGEREAU0">
+    </div>
+
+    <input type="submit" id="btnLog" value="Créer Le Client"/>
+       
+</form>
+

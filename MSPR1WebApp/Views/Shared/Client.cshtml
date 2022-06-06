@@ -1,0 +1,147 @@
+@model IEnumerable<MSPR1WebApp.Models.Client>
+@{
+    ViewBag.Title = "Fiche client";
+}
+
+
+@if (Html.Raw(ViewBag.RefClient).Value != null)    {
+    <div class="form-horizontal">
+        <hr />
+        <div class="form-group">
+            <table class="table table-responsive" style="width:400px">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.RefClient)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CodeClient)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Nom)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Adresse1)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Adresse2)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Ville)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CP)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Pays)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Web)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Tel)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CompteComptable)
+                    </th>
+                    <th>                        
+                        <form method="post" >
+                            @Html.ActionLink("Contacts", "Index","ContactDuClient" , new {codeClient = @Html.Raw(@ViewBag.CodeClient)}  ,null )
+                        </form>
+                    </th>
+                    
+                </tr>
+                    <tr>
+                        <td id="RefClient">
+                            @Html.Raw(ViewBag.RefClient)
+                        </td>
+                        <td id="CodeClient">
+                            @Html.Raw(ViewBag.CodeClient)
+                        </td>
+                        <td id="Nom">
+                            @Html.Raw(ViewBag.Nom)
+                        </td>
+                        <td id="Adresse1">
+                            @Html.Raw(ViewBag.Adresse1)
+                        </td>
+                        <td id="Adresse2">
+                            @Html.Raw(ViewBag.Adresse2)
+                        </td>
+                        <td id="Ville">
+                            @Html.Raw(ViewBag.Ville)
+                        </td>
+                        <td id="CP">
+                            @Html.Raw(ViewBag.CP)
+                        </td>
+                        <td id="Pays">
+                            @Html.Raw(ViewBag.Pays)
+                        </td>
+                        <td id="Web">
+                            @Html.Raw(ViewBag.Web)
+                        </td>
+                        <td id="Tel">
+                            @Html.Raw(ViewBag.Tel)
+                        </td>
+                        <td id="Email">
+                            @Html.Raw(ViewBag.Email)
+                        </td>
+                        <td id="CompteComptable">
+                            @Html.Raw(ViewBag.CompteComptable)
+                        </td>
+                        <td>
+                            <a class="navbar-brand" onclick="UpdateClient()" asp-area="" asp-controller="AddClient" asp-action="Update">        
+                                Mettre à jour le client
+                            </a>
+                        <form method="post" >
+                            @Html.ActionLink("Contacts", "delete","AddClient" , new {codeClient = @Html.Raw(@ViewBag.CodeClient)}  ,null )
+                        </form>
+                        </td>
+                    </tr>
+            </table>
+                                                       
+            
+
+            <a class="navbar-brand" asp-area="" asp-controller="AddClient" asp-action="Index">        
+                Creer un nouveau client
+            </a>
+                    
+        
+        </div>
+    </div>
+}
+else
+{
+    <h2>Entrez le Code Client que vous souhaitez chercher</h2>  
+    <form method="post" >
+        @Html.TextBox("codeClient") 
+        <input type="submit">
+    </form>
+
+}  
+
+<script>
+    
+    function UpdateClient() {
+        @ViewBag.RefClient = document.getElementById("RefClient").innerHTML;
+        @ViewBag.CodeClient = document.getElementById("CodeClient").innerHTML;
+        @ViewBag.Nom = document.getElementById("Nom").innerHTML;
+        @ViewBag.Adresse1 = document.getElementById("Adresse1").innerHTML;
+        @ViewBag.Adresse2= document.getElementById("Adresse2").innerHTML;
+        @ViewBag.Ville = document.getElementById("Ville").innerHTML;
+        @ViewBag.Cp = document.getElementById("Cp").innerHTML;
+        @ViewBag.Pays= document.getElementById("Pays").innerHTML;
+        @ViewBag.Web = document.getElementById("Web").innerHTML;
+        @ViewBag.Tel = document.getElementById("Tel").innerHTML;
+        @ViewBag.Email = document.getElementById("Email").innerHTML;
+        @ViewBag.CompteComptable = document.getElementById("CompteComptable").innerHTML;
+    }
+    
+    function DeleteClient() {
+        @ViewBag.CodeClient = document.getElementById("CodeClient").innerHTML;
+    }  
+</script>
+ 
+
+

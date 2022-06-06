@@ -1,0 +1,130 @@
+﻿@model IEnumerable<MSPR1WebApp.Models.Contact>
+@{
+    ViewBag.Title = "Fiche Contact";
+}
+
+@Html.Raw(ViewBag.Title)
+
+@if (ViewBag.All != null)    {
+    <div class="form-horizontal">
+        <hr />
+        <div class="form-group">
+            <table class="table table-responsive" style="width:400px">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.RefContact)
+                    </th>                  
+                    <th>
+                        @Html.DisplayNameFor(model => model.CodeClient)
+                    </th>                    
+                    <th>
+                        @Html.DisplayNameFor(model => model.Nom)
+                    </th>  
+                    <th>
+                        @Html.DisplayNameFor(model => model.Prenom)
+                    </th>                    
+                    <th>
+                        @Html.DisplayNameFor(model => model.Tel)
+                    </th>                     
+                    <th>
+                        @Html.DisplayNameFor(model => model.Fonction)
+                    </th>                    
+                    <th>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Adresse1)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CP)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Ville)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Pays)
+                    </th>
+
+                </tr>
+                @for (var i = 0; i <= ViewBag.NbOfElements ; i++)
+                {                    
+                    <tr>
+                        <td id="RefContact" class="@Html.Raw(ViewBag.All[i].RefContact)">
+                            @Html.Raw(ViewBag.All[i].RefContact)
+                        </td>
+                        <td id="CodeClient" class="@Html.Raw(ViewBag.All[i].CodeClient)">
+                            @Html.Raw(ViewBag.All[i].CodeClient)
+                        </td>
+                        <td id="Nom + @Html.Raw(ViewBag.All[i].Nom)">
+                            @Html.Raw(ViewBag.All[i].Nom)
+                        </td>
+                        <td id="Prenom + @Html.Raw(ViewBag.All[i].Prenom)">
+                            @Html.Raw(ViewBag.All[i].Prenom)
+                        </td >
+                        <td id="Tel + @Html.Raw(ViewBag.All[i].Tel)">
+                            @Html.Raw(ViewBag.All[i].Tel)
+                        </td>
+                        <td id="Fonction + @Html.Raw(ViewBag.All[i].Fonction)">
+                            @Html.Raw(ViewBag.All[i].Fonction)
+                        </td>
+                        <td id="Email + @Html.Raw(ViewBag.All[i].Email)">
+                            @Html.Raw(ViewBag.All[i].Email)
+                        </td>                   
+                        <td id="Adresse1 + @Html.Raw(ViewBag.All[i].Adresse1)">
+                            @Html.Raw(ViewBag.All[i].Adresse1)
+                        </td>
+                        <td id="CP + @Html.Raw(ViewBag.All[i].CP)">
+                            @Html.Raw(ViewBag.All[i].CP)
+                        </td>
+                        <td id="CP + @Html.Raw(ViewBag.All[i].Ville)">
+                            @Html.Raw(ViewBag.All[i].Ville)
+                        </td> 
+                        <td id="Pays + @Html.Raw(ViewBag.All[i].Pays)">
+                            @Html.Raw(ViewBag.All[i].Pays)
+                        </td> 
+                        <td>
+                            <a class="navbar-brand" onclick="UpdateClient()" asp-area="" asp-controller="AddContact" asp-action="Update">        
+                                Mettre à jour le contact
+                            </a>
+                            <a class="navbar-brand" onclick="DeleteClient()" asp-area="" asp-controller="AddContact" asp-action="Delete">        
+                                Supprimer le contact
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </table>     
+        </div>
+    </div>
+}
+else
+{
+    <h2>Pas de contact pour ce client</h2>  
+
+
+}
+
+<a class="navbar-brand" asp-area="" asp-controller="AddContact" asp-action="Index">        
+    Creer un nouveau Contact
+</a>
+
+<script>
+    
+    function UpdateClient() {
+        @ViewBag.RefContact = document.getElementById("RefContact").innerHTML;
+        @ViewBag.CodeClient = document.getElementById("CodeClient").innerHTML;
+        @ViewBag.Nom = document.getElementById("Nom").innerHTML;
+        @ViewBag.Prenom = document.getElementById("Prenom").innerHTML;
+        @ViewBag.Fonction = document.getElementById("Fonction").innerHTML;
+        @ViewBag.Adresse1 = document.getElementById("Adresse1").innerHTML;
+        @ViewBag.Ville = document.getElementById("Ville").innerHTML;
+        @ViewBag.Cp = document.getElementById("Cp").innerHTML;
+        @ViewBag.Pays= document.getElementById("Pays").innerHTML;
+        @ViewBag.Tel = document.getElementById("Tel").innerHTML;
+        @ViewBag.Email = document.getElementById("Email").innerHTML;
+    }
+    
+    function DeleteClient() {
+        @ViewBag.RefClient = document.getElementById("RefContact").innerHTML;
+        @ViewBag.CodeClient = document.getElementById("CodeContact").innerHTML;
+    }  
+</script>

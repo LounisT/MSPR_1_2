@@ -1,0 +1,148 @@
+﻿@model IEnumerable<MSPR1WebApp.Models.Facture>
+@{
+    ViewBag.Title = "Fiche Facture";
+}
+
+@Html.Raw(ViewBag.Title)
+
+@if (ViewBag.All != null)    {
+    <div class="form-horizontal">
+        <hr />
+        <div class="form-group">
+            <table class="table table-responsive" style="width:400px">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.RefFacture)
+                    </th>                  
+                    <th>
+                        @Html.DisplayNameFor(model => model.DateCrea)
+                    </th>                    
+                    <th>
+                        @Html.DisplayNameFor(model => model.RefUtilisateur)
+                    </th>  
+                    <th>
+                        @Html.DisplayNameFor(model => model.ObjetFacture)
+                    </th>                    
+                    <th>
+                        @Html.DisplayNameFor(model => model.CodeClient)
+                    </th>                     
+                    <th>
+                        @Html.DisplayNameFor(model => model.CiviliteContact)
+                    </th>                    
+                    <th>
+                        @Html.DisplayNameFor(model => model.NomContact)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PrenomContact)
+                    </th>                    
+                    <th>
+                        @Html.DisplayNameFor(model => model.RaisonSociale)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Adresse1)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Adresse2)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CP)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Ville)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Pays)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Reglement)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CodeTva)
+                    </th>                    
+                    <th>
+                        @Html.DisplayNameFor(model => model.TotHT)
+                    </th>                    
+                    <th>
+                        @Html.DisplayNameFor(model => model.TotTTC)
+                    </th>                    
+                    <th>
+                        @Html.DisplayNameFor(model => model.DateEcheance)
+                    </th>
+                </tr>
+                @for (var i = 0; i <= ViewBag.NbOfElements ; i++)
+                {                    
+                    <tr>
+                        <td>
+                            @Html.Raw(ViewBag.All[i].RefFacture)
+                        </td>
+                        <td>
+                            @Html.Raw(ViewBag.All[i].DateCrea)
+                        </td>
+                        <td>
+                            @Html.Raw(ViewBag.All[i].RefUtilisateur)
+                        </td>
+                        <td>
+                            @Html.Raw(ViewBag.All[i].ObjetFacture)
+                        </td>
+                        <td>
+                            @Html.Raw(ViewBag.All[i].CodeClient)
+                        </td>
+                        <td>
+                            @Html.Raw(ViewBag.All[i].CiviliteContact)
+                        </td>
+                        <td>
+                            @Html.Raw(ViewBag.All[i].NomContact)
+                        </td>
+                        <td>
+                            @Html.Raw(ViewBag.All[i].PrenomContact)
+                        </td>
+                        <td>
+                            @Html.Raw(ViewBag.All[i].RaisonSociale)
+                        </td>
+                        <td>
+                            @Html.Raw(ViewBag.All[i].Adresse1)
+                        </td>
+                        <td>
+                            @Html.Raw(ViewBag.All[i].Adresse2)
+                        </td>
+                        <td>
+                            @Html.Raw(ViewBag.All[i].CP)
+                        </td>                        
+                        <td>
+                            @Html.Raw(ViewBag.All[i].Ville)
+                        </td>                        
+                        <td>
+                            @Html.Raw(ViewBag.All[i].Pays)
+                        </td>                        
+                        <td>
+                            @Html.Raw(ViewBag.All[i].Reglement)
+                        </td>                        
+                        <td>
+                            @Html.Raw(ViewBag.All[i].CodeTva)
+                        </td>                        
+                        <td>
+                            @Html.Raw(ViewBag.All[i].TotHT)
+                        </td>                        
+                        <td>
+                            @Html.Raw(ViewBag.All[i].TotTTC)
+                        </td>                        
+                        <td>
+                            @Html.Raw(ViewBag.All[i].DateEcheance)
+                        </td>
+                    </tr>
+                }
+            </table>     
+        </div>
+    </div>
+}
+else
+{
+    <h2>Entrez le Code Client que vous souhaitez chercher</h2>  
+    <form method="post" >
+        @Html.TextBox("codeClient") 
+        <input type="submit">
+    </form>
+  
+
+
+}

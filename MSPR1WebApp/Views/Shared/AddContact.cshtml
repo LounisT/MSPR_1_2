@@ -1,0 +1,69 @@
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Ajouter un Contact";
+}
+
+@Html.Raw(ViewBag.Title);
+
+<form method="post">
+    <div class="log_input">
+            <label for="RefContact">RefContact </label>
+            <input type="text" name="RefContact" placeholder="23">
+    </div>
+
+    <div class="log_input">
+            <label for="codeClient">Code Client </label>
+            <input type="text" name="codeClient" placeholder="Augereau">
+    </div> 
+    <div class="log_input">
+            <label for="Nom">Nom </label>
+            <input type="text" name="Nom" placeholder="Alard">
+    </div>
+
+    <div class="log_input">
+            <label for="Prenom">Prenom </label>
+            <input type="text" name="Prenom" placeholder="Jacques">
+    </div>  
+    
+    <div class="log_input">
+        <label for="Tel">Tel </label>
+        <input type="text" name="Tel" placeholder="0987654321">
+    </div>
+
+    <div class="log_input">
+        <label for="Email">Email </label>
+        <input type="text" name="Email" placeholder="jacques.alard@gmail.com">
+    </div> 
+
+    <div class="log_input">
+            <label for="Fonction">Fonction </label>
+            <input type="text" name="Fonction" placeholder="PDG">
+    </div>
+    <div class="log_input">
+        <label for="Adresse1">Adresse 1 </label>
+        <input type="text" name="Adresse1" placeholder="2, rue de Rivoli">
+    </div>
+
+
+    <div class="log_input">
+        <label for="Ville">Ville </label>
+        <input type="text" name="Ville" placeholder="Paris">
+    </div>
+
+    <div class="log_input">
+        <label for="CP">Code Postal </label>
+        <input type="text" name="CP" placeholder="75004">
+    </div>
+
+    <div class="log_input">
+        <label for="Pays">Pays </label>
+        <input type="text" name="Pays" placeholder="France">
+    </div>
+
+
+    <input type="submit" id="btnLog" value="Créer Le Contact"/>
+       
+</form>
+
