@@ -145,20 +145,64 @@ namespace MSPR1WebApp.Controllers
             return View("Client");
         }
 
-        [HttpPost]
-        public string getCodeClient()
+        public async Task<ActionResult> IndexUpdate(string RefClient, string CodeClient, string Nom, string Adresse1, string Adresse2, string Ville, string CP, string Pays, string Web, string Tel, string Email, string CompteComptable)
         {
-            string codeClient = null;
-            try
-            {
-                codeClient = Request.Form["CodeClient"].ToString().ToUpper();
-            }
-            catch (Exception ex)
-            {
-                return codeClient;
-            }
-            return codeClient;
+            ViewBag.RefClient = RefClient;
+            ViewBag.CodeClient = CodeClient;
+            ViewBag.Nom = Nom;
+            ViewBag.Adresse1 = Adresse1;
+            ViewBag.Adresse2 = Adresse2;
+            ViewBag.Ville = Ville;
+            ViewBag.CP = CP;
+            ViewBag.Pays = Pays;
+            ViewBag.Web = Web;
+            ViewBag.Tel = Tel;
+            ViewBag.Email = Email;
+            ViewBag.CompteComptable = CompteComptable;
+            return View("UpdateClient");
         }
 
+        public async Task<ActionResult> Update()
+        {
+            if (getInfoNewClient().RefClient != null)
+            {
+
+                using (var client = new HttpClient())
+                {
+                    Client leClient = new Client();
+                    leClient = new Client
+                    {
+                        RefClient = Request.Form["RefClient"].ToString().ToUpper(),
+                        CodeClient = Request.Form["CodeClient"].ToString().ToUpper(),
+                        Nom = Request.Form["Nom"].ToString().ToUpper(),
+                        Adresse1 = Request.Form["Adresse1"].ToString().ToUpper(),
+                        Adresse2 = Request.Form["Adresse2"].ToString().ToUpper(),
+                        Ville = Request.Form["Ville"].ToString().ToUpper(),
+                        CP = Request.Form["CP"].ToString().ToUpper(),
+                        Pays = Request.Form["Pays"].ToString().ToUpper(),
+                        Email = Request.Form["Email"].ToString().ToUpper(),
+                        Tel = Request.Form["Tel"].ToString().ToUpper(),
+                        Web = Request.Form["Web"].ToString().ToUpper(),
+                        CompteComptable = Request.Form["CompteComptable"].ToString().ToUpper()
+                    };
+
+
+                    string json = JsonConvert.SerializeObject(leClient, Formatting.Indented);
+                    var data = new StringContent(json, Encoding.UTF8, "application/json");
+
+
+                    var response = await client.PostAsync(Baseurl + "api/Client/Update", data);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        return View("Client");
+                    }
+                }
+
+
+                return View("Client");
+            }
+            return View("Client");
+        }        
     }
 }

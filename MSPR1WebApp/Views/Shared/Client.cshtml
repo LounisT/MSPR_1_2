@@ -91,11 +91,24 @@
                             @Html.Raw(ViewBag.CompteComptable)
                         </td>
                         <td>
-                            <a class="navbar-brand" onclick="UpdateClient()" asp-area="" asp-controller="AddClient" asp-action="Update">        
-                                Mettre à jour le client
-                            </a>
+
                         <form method="post" >
-                            @Html.ActionLink("Contacts", "delete","AddClient" , new {codeClient = @Html.Raw(@ViewBag.CodeClient)}  ,null )
+                            @Html.ActionLink("Update", "IndexUpdate","AddClient" ,new {RefClient = @Html.Raw(@ViewBag.RefClient), 
+                                                                                    CodeClient = @Html.Raw(@ViewBag.CodeClient),
+                                                                                    Nom = @Html.Raw(@ViewBag.Nom),
+                                                                                    Adresse1 = @Html.Raw(@ViewBag.Adresse1),
+                                                                                    Adresse2 = @Html.Raw(@ViewBag.Adresse2),
+                                                                                    Ville = @Html.Raw(@ViewBag.Ville),
+                                                                                    CP = @Html.Raw(@ViewBag.CP),
+                                                                                    Pays = @Html.Raw(@ViewBag.Pays),
+                                                                                    Web = @Html.Raw(@ViewBag.Web),
+                                                                                    Tel = @Html.Raw(@ViewBag.Tel),
+                                                                                    Email = @Html.Raw(@ViewBag.Email),
+                                                                                    CompteComptable = @Html.Raw(@ViewBag.CompteComptable),}  ,null )
+                        </form>  
+                        
+                        <form method="post" >
+                            @Html.ActionLink("Delete", "delete","AddClient" , new {codeClient = @Html.Raw(@ViewBag.CodeClient)}  ,null )
                         </form>
                         </td>
                     </tr>

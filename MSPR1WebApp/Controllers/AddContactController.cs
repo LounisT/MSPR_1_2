@@ -95,29 +95,100 @@ namespace MSPR1WebApp.Controllers
             return contact;
             
         }
+        public async Task<ActionResult> Delete(string RefContact)
+        {
 
-        public async Task<ActionResult> Delete()
+
+            using (var client = new HttpClient())
+            {
+                Contact leContact = new Contact();
+                leContact = new Contact
+                {
+                    RefContact = RefContact,
+                    CodeClient = "",
+                    Nom = "",
+                    Adresse1 = "",
+                    Adresse2 = "",
+                    Ville = "",
+                    CP = "",
+                    Pays = "",
+                    Email = "",
+                    Tel = "",
+                    
+                };
+
+
+                string json = JsonConvert.SerializeObject(leContact, Formatting.Indented);
+                var data = new StringContent(json, Encoding.UTF8, "application/json");
+
+
+                var response = await client.PostAsync(Baseurl + "api/ContactDuClient/Delete", data);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    return View("Client");
+                }
+            }
+
+
+            return View("Client");
+        }
+
+        public async Task<ActionResult> IndexUpdate(string RefContact, string CodeClient, string Nom, string Prenom,string Tel, string Fonction,   string Email,string Adresse1, string Adresse2, string Ville, string CP, string Pays)
+        {
+            ViewBag.RefContact = RefContact;
+            ViewBag.CodeClient = CodeClient;
+            ViewBag.Nom = Nom;
+            ViewBag.Prenom = Prenom;
+            ViewBag.Tel = Tel;
+            ViewBag.Fonction = Fonction;
+            ViewBag.Email = Email;
+            ViewBag.Adresse1 = Adresse1;
+            ViewBag.Adresse2 = Adresse2;
+            ViewBag.Ville = Ville;
+            ViewBag.CP = CP;
+            ViewBag.Pays = Pays;
+            return View("UpdateContact");
+        }
+
+        public async Task<ActionResult> Update()
         {
 
             using (var client = new HttpClient())
-
             {
-                client.BaseAddress = new Uri(Baseurl);
-                client.DefaultRequestHeaders.Clear();
-                //Define request data format
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                var leClient = JsonConvert.SerializeObject(getInfoNewContact(), Newtonsoft.Json.Formatting.Indented);
-                //Sending request to find web api REST service resource GetAllClients using HttpClient
-
-                HttpResponseMessage Res = await client.GetAsync("api/ContactDuClient/Delete/" + ViewBag.RefContact);
-                if (Res.IsSuccessStatusCode)
+                Contact leContact = new Contact();
+                leContact = new Contact
                 {
-                    return View("Contact");
-                }
+                    RefContact = Request.Form["RefContact"].ToString().ToUpper(),
+                    CodeClient = Request.Form["CodeClient"].ToString().ToUpper(),
+                    Nom = Request.Form["Nom"].ToString().ToUpper(),
+                    Prenom = Request.Form["Prenom"].ToString(),
+                    Tel = Request.Form["Tel"].ToString(),
+                    Fonction = Request.Form["Fonction"].ToString(),
+                    Email = Request.Form["Email"].ToString(),
+                    Adresse1 = Request.Form["Adresse1"].ToString(),
+                    Adresse2 = Request.Form["Adresse2"].ToString(),
+                    Ville = Request.Form["Ville"].ToString(),
+                    CP = Request.Form["CP"].ToString().ToUpper(),
+                    Pays = Request.Form["Pays"].ToString()
 
+                };
+
+                string json = JsonConvert.SerializeObject(leContact, Formatting.Indented);
+                var data = new StringContent(json, Encoding.UTF8, "application/json");
+
+
+                var response = await client.PostAsync(Baseurl + "api/ContactDuClient/Update", data);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    return View("Client");
+                }
             }
 
-            return View("Contact");
+
+            return View("Client");
+            
         }
     }
 }

@@ -49,10 +49,10 @@
                 @for (var i = 0; i <= ViewBag.NbOfElements ; i++)
                 {                    
                     <tr>
-                        <td id="RefContact" class="@Html.Raw(ViewBag.All[i].RefContact)">
+                        <td id="RefContact" >
                             @Html.Raw(ViewBag.All[i].RefContact)
                         </td>
-                        <td id="CodeClient" class="@Html.Raw(ViewBag.All[i].CodeClient)">
+                        <td id="CodeClient" >
                             @Html.Raw(ViewBag.All[i].CodeClient)
                         </td>
                         <td id="Nom + @Html.Raw(ViewBag.All[i].Nom)">
@@ -83,12 +83,26 @@
                             @Html.Raw(ViewBag.All[i].Pays)
                         </td> 
                         <td>
-                            <a class="navbar-brand" onclick="UpdateClient()" asp-area="" asp-controller="AddContact" asp-action="Update">        
-                                Mettre à jour le contact
-                            </a>
-                            <a class="navbar-brand" onclick="DeleteClient()" asp-area="" asp-controller="AddContact" asp-action="Delete">        
-                                Supprimer le contact
-                            </a>
+                        <form method="post" >
+                            @Html.ActionLink("Update", "IndexUpdate","AddContact" , new {RefContact = @Html.Raw(@ViewBag.All[i].RefContact), 
+                                                                                      CodeClient = @Html.Raw(@ViewBag.All[i].CodeClient),
+                                                                                      Nom = @Html.Raw(@ViewBag.All[i].Nom),
+                                                                                      Prenom = @Html.Raw(@ViewBag.All[i].Prenom),
+                                                                                      Tel = @Html.Raw(@ViewBag.All[i].Tel),
+                                                                                      Fonction = @Html.Raw(@ViewBag.All[i].Fonction),
+                                                                                      Email = @Html.Raw(@ViewBag.All[i].Email),
+                                                                                      Adresse1 = @Html.Raw(@ViewBag.All[i].Adresse1), 
+                                                                                      Adresse2 = @Html.Raw(@ViewBag.All[i].Adresse2),
+                                                                                      Ville = @Html.Raw(@ViewBag.All[i].Ville),
+                                                                                      CP = @Html.Raw(@ViewBag.All[i].CP),
+                                                                                      Pays = @Html.Raw(@ViewBag.All[i].Pays)}, null )                                                                         
+                                                                                      
+                                                                                      
+                        </form>  
+                        
+                        <form method="post" >
+                            @Html.ActionLink("Delete", "delete","AddContact" , new {RefContact = @Html.Raw(@ViewBag.All[i].RefContact)}  ,null )
+                        </form>
                         </td>
                     </tr>
                 }

@@ -1,0 +1,71 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Mettre à jour un Client";
+}
+
+
+<form method="post" action="Update">
+    <div class="log_input">
+            <label for="RefContact">RefContact </label>
+            <input type="text" name="RefContact" readonly Value="@Html.Raw(ViewBag.RefContact)">
+    </div>
+    <div class="log_input">
+            <label for="CodeClient">Code Client </label>
+            <input type="text" name="CodeClient" readonly value="@Html.Raw(ViewBag.CodeClient)">
+    </div> 
+    <div class="log_input">
+            <label for="Nom">Nom </label>
+            <input type="text" name="Nom" value="@Html.Raw(ViewBag.Nom)">
+    </div>   
+    <div class="log_input">
+            <label for="Prenom">Prenom </label>
+            <input type="text" name="Prenom" value="@Html.Raw(ViewBag.Prenom)">
+    </div>
+
+    <div class="log_input">
+        <label for="Tel">Tel </label>
+        <input type="text" name="Tel" value="@Html.Raw(ViewBag.Tel)">
+    </div>
+    <div class="log_input">
+        <label for="Fonction">Fonction </label>
+        <input type="text" name="Fonction" value="@Html.Raw(ViewBag.Fonction)">
+    </div>
+
+    <div class="log_input">
+        <label for="Email">Email </label>
+        <input type="text" name="Email" value="@Html.Raw(ViewBag.Email)">
+    </div>
+
+    <div class="log_input">
+        <label for="Adresse1">Adresse 1 </label>
+        <input type="text" name="Adresse1" value="@Html.Raw(ViewBag.Adresse1)">
+    </div>
+
+    <div class="log_input">
+        <label for="Adresse2">Adresse 2 </label>
+        <input type="text" name="Adresse2" value="@Html.Raw(ViewBag.Adresse2)">
+    </div>
+
+    <div class="log_input">
+        <label for="Ville">Ville </label>
+        <input type="text" name="Ville" value="@Html.Raw(ViewBag.Ville)">
+    </div>
+
+    <div class="log_input">
+        <label for="CP">Code Postal </label>
+        <input type="text" name="CP" value="@Html.Raw(ViewBag.CP)">
+    </div>
+
+    <div class="log_input">
+        <label for="Pays">Pays </label>
+        <input type="text" name="Pays" value="@Html.Raw(ViewBag.Pays)">
+    </div>
+
+
+
+    <input type="submit" id="btnLog" value="Mettre à jour le Contact"/>
+       
+</form>
+
