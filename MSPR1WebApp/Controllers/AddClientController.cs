@@ -29,15 +29,15 @@ namespace MSPR1WebApp.Controllers
                         RefClient = Request.Form["RefClient"].ToString().ToUpper(),
                         CodeClient = Request.Form["CodeClient"].ToString().ToUpper(),
                         Nom = Request.Form["Nom"].ToString().ToUpper(),
-                        Adresse1 = Request.Form["Adresse1"].ToString().ToUpper(),
-                        Adresse2 = Request.Form["Adresse2"].ToString().ToUpper(),
-                        Ville = Request.Form["Ville"].ToString().ToUpper(),
-                        CP = Request.Form["CP"].ToString().ToUpper(),
-                        Pays = Request.Form["Pays"].ToString().ToUpper(),
-                        Email = Request.Form["Email"].ToString().ToUpper(),
-                        Tel = Request.Form["Tel"].ToString().ToUpper(),
-                        Web = Request.Form["Web"].ToString().ToUpper(),
-                        CompteComptable = Request.Form["CompteComptable"].ToString().ToUpper()
+                        Adresse1 = Request.Form["Adresse1"].ToString(),
+                        Adresse2 = Request.Form["Adresse2"].ToString(),
+                        Ville = Request.Form["Ville"].ToString(),
+                        CP = Request.Form["CP"].ToString(),
+                        Pays = Request.Form["Pays"].ToString(),
+                        Email = Request.Form["Email"].ToString(),
+                        Tel = Request.Form["Tel"].ToString(),
+                        Web = Request.Form["Web"].ToString(),
+                        CompteComptable = Request.Form["CompteComptable"].ToString()
                     };
 
 
@@ -90,15 +90,15 @@ namespace MSPR1WebApp.Controllers
                     RefClient = Request.Form["RefClient"].ToString().ToUpper(),
                     CodeClient = Request.Form["CodeClient"].ToString().ToUpper(),
                     Nom = Request.Form["Nom"].ToString().ToUpper(),
-                    Adresse1 = Request.Form["Adresse1"].ToString().ToUpper(),
-                    Adresse2 = Request.Form["Adresse2"].ToString().ToUpper(),
-                    Ville = Request.Form["Ville"].ToString().ToUpper(),
-                    CP = Request.Form["CP"].ToString().ToUpper(),
-                    Pays = Request.Form["Pays"].ToString().ToUpper(),
-                    Email = Request.Form["Email"].ToString().ToUpper(),
-                    Tel = Request.Form["Tel"].ToString().ToUpper(),
-                    Web = Request.Form["Web"].ToString().ToUpper(),
-                    CompteComptable = Request.Form["CompteComptable"].ToString().ToUpper()
+                    Adresse1 = Request.Form["Adresse1"].ToString(),
+                    Adresse2 = Request.Form["Adresse2"].ToString(),
+                    Ville = Request.Form["Ville"].ToString(),
+                    CP = Request.Form["CP"].ToString(),
+                    Pays = Request.Form["Pays"].ToString(),
+                    Email = Request.Form["Email"].ToString(),
+                    Tel = Request.Form["Tel"].ToString(),
+                    Web = Request.Form["Web"].ToString(),
+                    CompteComptable = Request.Form["CompteComptable"].ToString()
                 };
 
             return client;
@@ -175,15 +175,15 @@ namespace MSPR1WebApp.Controllers
                         RefClient = Request.Form["RefClient"].ToString().ToUpper(),
                         CodeClient = Request.Form["CodeClient"].ToString().ToUpper(),
                         Nom = Request.Form["Nom"].ToString().ToUpper(),
-                        Adresse1 = Request.Form["Adresse1"].ToString().ToUpper(),
-                        Adresse2 = Request.Form["Adresse2"].ToString().ToUpper(),
-                        Ville = Request.Form["Ville"].ToString().ToUpper(),
-                        CP = Request.Form["CP"].ToString().ToUpper(),
-                        Pays = Request.Form["Pays"].ToString().ToUpper(),
-                        Email = Request.Form["Email"].ToString().ToUpper(),
-                        Tel = Request.Form["Tel"].ToString().ToUpper(),
-                        Web = Request.Form["Web"].ToString().ToUpper(),
-                        CompteComptable = Request.Form["CompteComptable"].ToString().ToUpper()
+                        Adresse1 = Request.Form["Adresse1"].ToString(),
+                        Adresse2 = Request.Form["Adresse2"].ToString(),
+                        Ville = Request.Form["Ville"].ToString(),
+                        CP = Request.Form["CP"].ToString(),
+                        Pays = Request.Form["Pays"].ToString(),
+                        Email = Request.Form["Email"].ToString(),
+                        Tel = Request.Form["Tel"].ToString(),
+                        Web = Request.Form["Web"].ToString(),
+                        CompteComptable = Request.Form["CompteComptable"].ToString()
                     };
 
 

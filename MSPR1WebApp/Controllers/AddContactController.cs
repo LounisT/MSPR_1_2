@@ -30,15 +30,15 @@ namespace MSPR1WebApp.Controllers
                             RefContact = Request.Form["RefContact"].ToString().ToUpper(),
                             CodeClient = Request.Form["CodeClient"].ToString().ToUpper(),
                             Nom = Request.Form["Nom"].ToString().ToUpper(),
-                            Prenom = Request.Form["Prenom"].ToString().ToUpper(),
-                            Adresse1 = Request.Form["Adresse1"].ToString().ToUpper(),
-                            Adresse2 = Request.Form["Adresse2"].ToString().ToUpper(),
-                            Ville = Request.Form["Ville"].ToString().ToUpper(),
-                            CP = Request.Form["CP"].ToString().ToUpper(),
-                            Pays = Request.Form["Pays"].ToString().ToUpper(),
-                            Email = Request.Form["Email"].ToString().ToUpper(),
-                            Tel = Request.Form["Tel"].ToString().ToUpper(),
-                            Fonction = Request.Form["Tel"].ToString().ToUpper()
+                            Prenom = Request.Form["Prenom"].ToString(),
+                            Adresse1 = Request.Form["Adresse1"].ToString(),
+                            Adresse2 = Request.Form["Adresse2"].ToString(),
+                            Ville = Request.Form["Ville"].ToString(),
+                            CP = Request.Form["CP"].ToString(),
+                            Pays = Request.Form["Pays"].ToString(),
+                            Email = Request.Form["Email"].ToString(),
+                            Tel = Request.Form["Tel"].ToString(),
+                            Fonction = Request.Form["Tel"].ToString()
 
                         };
 
@@ -80,15 +80,15 @@ namespace MSPR1WebApp.Controllers
                 RefContact = Request.Form["RefContact"].ToString().ToUpper(),
                 CodeClient = Request.Form["CodeClient"].ToString().ToUpper(),
                 Nom = Request.Form["Nom"].ToString().ToUpper(),
-                Prenom = Request.Form["Prenom"].ToString().ToUpper(),
-                Tel = Request.Form["Tel"].ToString().ToUpper(),
-                Email = Request.Form["Email"].ToString().ToUpper(),
-                Fonction = Request.Form["Fonction"].ToString().ToUpper(),
-                Adresse1 = Request.Form["Adresse1"].ToString().ToUpper(),
+                Prenom = Request.Form["Prenom"].ToString(),
+                Tel = Request.Form["Tel"].ToString(),
+                Email = Request.Form["Email"].ToString(),
+                Fonction = Request.Form["Fonction"].ToString(),
+                Adresse1 = Request.Form["Adresse1"].ToString(),
                 Adresse2 = "",
-                Ville = Request.Form["Ville"].ToString().ToUpper(),
-                CP = Request.Form["CP"].ToString().ToUpper(),
-                Pays = Request.Form["Pays"].ToString().ToUpper(),
+                Ville = Request.Form["Ville"].ToString(),
+                CP = Request.Form["CP"].ToString(),
+                Pays = Request.Form["Pays"].ToString(),
                 Commentaire = ""
             };
 
@@ -169,7 +169,7 @@ namespace MSPR1WebApp.Controllers
                     Adresse1 = Request.Form["Adresse1"].ToString(),
                     Adresse2 = Request.Form["Adresse2"].ToString(),
                     Ville = Request.Form["Ville"].ToString(),
-                    CP = Request.Form["CP"].ToString().ToUpper(),
+                    CP = Request.Form["CP"].ToString(),
                     Pays = Request.Form["Pays"].ToString()
 
                 };
